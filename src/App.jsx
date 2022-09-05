@@ -6,6 +6,7 @@ import moon from "./assets/icon-moon.svg";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
+  const [task, setTask] = useState([]);
 
   const changeMode = () => {
     setDarkMode((prevMode) => !prevMode);
@@ -29,7 +30,7 @@ function App() {
           "bg-veryLightGrayishBlue"
         )}`}
       >
-        <div className="w-screen z-20 mt-12 mx-5 md:mx-24 lg:mx-48 xl:mx-96 2xl:mx-[500px] 2xl:max-w-[700px]">
+        <div className="w-screen z-20 mt-12 mx-5 md:mx-24 lg:mx-48 xl:mx-96 2xl:mx-[500px] 2xl:max-w-[700px] space-y-8">
           <div className="flex justify-between">
             <h1 className="text-white text-3xl font-bold tracking-[0.4em] lg:text-5xl">
               TODO
@@ -43,7 +44,7 @@ function App() {
               />
             </button>
           </div>
-          <CreateTodo />
+          <CreateTodo decideMode={decideMode} setTask={setTask} />
           <TodoList />
         </div>
       </div>

@@ -15,15 +15,17 @@ module.exports = {
       "desktop-light": "url(./src/assets/bg-desktop-light.jpg)",
       "mobile-dark": "url(./src/assets/bg-mobile-dark.jpg)",
       "mobile-light": "url(./src/assets/bg-mobile-light.jpg)",
+      check: "url(./src/assets/icon-check.svg)",
     },
     colors: {
       // Defaults
       white: "#ffffff",
+      black: "#000000",
 
       // Primary
       brightBlue: "hsl(220, 98%, 61%)",
-      checkBackground:
-        "linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)",
+      blue: "hsl(192, 100%, 67%)",
+      red: "hsl(280, 87%, 65%)",
 
       // Dark theme
       veryDarkBlue: "hsl(235, 21%, 11%)",
@@ -32,7 +34,7 @@ module.exports = {
       lightGrayishBlueHover: "hsl(236, 33%, 92%)",
       darkGrayishBlue: "hsl(234, 11%, 52%)",
       veryDarkGrayishBlue: "hsl(233, 14%, 35%)",
-      veryDarkGrayishBlue: "hsl(237, 14%, 26%)",
+      // veryDarkGrayishBlue: "hsl(237, 14%, 26%)",
 
       // Light theme
       veryLightGray: "hsl(0, 0%, 98%)",

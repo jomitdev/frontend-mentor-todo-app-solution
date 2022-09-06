@@ -11,11 +11,11 @@ module.exports = {
       "2xl": "1536px",
     },
     backgroundImage: {
-      "desktop-dark": "url(./src/assets/bg-desktop-dark.jpg)",
-      "desktop-light": "url(./src/assets/bg-desktop-light.jpg)",
-      "mobile-dark": "url(./src/assets/bg-mobile-dark.jpg)",
-      "mobile-light": "url(./src/assets/bg-mobile-light.jpg)",
-      check: "url(./src/assets/icon-check.svg)",
+      "desktop-dark": "url(/src/assets/bg-desktop-dark.jpg)",
+      "desktop-light": "url(/src/assets/bg-desktop-light.jpg)",
+      "mobile-dark": "url(/src/assets/bg-mobile-dark.jpg)",
+      "mobile-light": "url(/src/assets/bg-mobile-light.jpg)",
+      check: "url(/src/assets/icon-check.svg)",
     },
     colors: {
       // Defaults

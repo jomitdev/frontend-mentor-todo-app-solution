@@ -1,14 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Todo from "./Todo";
 
 const TodoList = ({ tasks, setTasks, decideMode }) => {
+  const [filter, setFilter] = useState("all");
   const clearCompleted = () => {
     setTasks((prevTasks) => {
       return prevTasks.filter((el) => !el.completed);
     });
   };
 
-  const todos = tasks.map((task, index) => (
+  const changeFilter = (e) => {
+    setFilter(e.target.name);
+  };
+
+  let todos = [];
+
+  if (filter === "all") {
+    todos = [];
+    todos = tasks;
+  } else if (filter === "active") {
+    todos = [];
+    todos = tasks.filter((task) => !task.completed);
+  } else {
+    todos = [];
+    todos = tasks.filter((task) => task.completed);
+  }
+
+  todos = todos.map((task, index) => (
     <Todo
       key={index}
       tasks={tasks}
@@ -17,6 +35,7 @@ const TodoList = ({ tasks, setTasks, decideMode }) => {
       decideMode={decideMode}
     />
   ));
+
   return (
     <div className="font-josefin pb-6">
       <div
@@ -34,7 +53,7 @@ const TodoList = ({ tasks, setTasks, decideMode }) => {
           {todos}
         </div>
 
-        {todos.length > 0 && (
+        {tasks.length > 0 && (
           <div className="space-y-4">
             <div
               className={`flex justify-between rounded-b text-darkGrayishBlue p-3 ${decideMode(
@@ -50,7 +69,13 @@ const TodoList = ({ tasks, setTasks, decideMode }) => {
                   className={`${decideMode(
                     "hover:text-white",
                     "hover:text-veryDarkDesaturatedBlue"
-                  )}`}
+                  )} ${
+                    filter === "all"
+                      ? "text-brightBlue hover:text-brightBlue"
+                      : ""
+                  }`}
+                  onClick={changeFilter}
+                  name="all"
                 >
                   All
                 </button>
@@ -58,7 +83,13 @@ const TodoList = ({ tasks, setTasks, decideMode }) => {
                   className={`${decideMode(
                     "hover:text-white",
                     "hover:text-veryDarkDesaturatedBlue"
-                  )}`}
+                  )} ${
+                    filter === "active"
+                      ? "text-brightBlue hover:text-brightBlue"
+                      : ""
+                  }`}
+                  onClick={changeFilter}
+                  name="active"
                 >
                   Active
                 </button>
@@ -66,7 +97,13 @@ const TodoList = ({ tasks, setTasks, decideMode }) => {
                   className={`${decideMode(
                     "hover:text-white",
                     "hover:text-veryDarkDesaturatedBlue"
-                  )}`}
+                  )} ${
+                    filter === "completed"
+                      ? "text-brightBlue hover:text-brightBlue"
+                      : ""
+                  }`}
+                  onClick={changeFilter}
+                  name="completed"
                 >
                   Completed
                 </button>
@@ -88,9 +125,48 @@ const TodoList = ({ tasks, setTasks, decideMode }) => {
                 "bg-white"
               )}`}
             >
-              <button className="hover:text-white">All</button>
-              <button className="hover:text-white">Active</button>
-              <button className="hover:text-white">Completed</button>
+              <button
+                className={`${decideMode(
+                  "hover:text-white",
+                  "hover:text-veryDarkDesaturatedBlue"
+                )} ${
+                  filter === "all"
+                    ? "text-brightBlue hover:text-brightBlue"
+                    : ""
+                }`}
+                onClick={changeFilter}
+                name="all"
+              >
+                All
+              </button>
+              <button
+                className={`${decideMode(
+                  "hover:text-white",
+                  "hover:text-veryDarkDesaturatedBlue"
+                )} ${
+                  filter === "active"
+                    ? "text-brightBlue hover:text-brightBlue"
+                    : ""
+                }`}
+                onClick={changeFilter}
+                name="active"
+              >
+                Active
+              </button>
+              <button
+                className={`${decideMode(
+                  "hover:text-white",
+                  "hover:text-veryDarkDesaturatedBlue"
+                )} ${
+                  filter === "completed"
+                    ? "text-brightBlue hover:text-brightBlue"
+                    : ""
+                }`}
+                onClick={changeFilter}
+                name="completed"
+              >
+                Completed
+              </button>
             </div>
           </div>
         )}

@@ -52,11 +52,9 @@ const Todo = ({ task, tasks, decideMode, setTasks }) => {
         >
           {task.text}
         </p>
-        {!task.completed && (
-          <button onClick={deleteTask}>
-            <img src={closeIcon} alt="" />
-          </button>
-        )}
+        <button onClick={deleteTask}>
+          <img src={closeIcon} alt="" />
+        </button>
       </div>
       <hr
         className={`${decideMode(

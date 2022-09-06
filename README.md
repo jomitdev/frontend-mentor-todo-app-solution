@@ -41,8 +41,8 @@ Screnshots of the desktop light mode and the mobile versions can be found in the
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: (https://github.com/jomitdev/frontend-mentor-todo-app-solution)
+- Live Site URL: (https://frontend-mentor-todo-app-solution.netlify.app/)
 
 ## My process
 

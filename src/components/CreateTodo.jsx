@@ -7,12 +7,12 @@ const CreateTodo = ({ decideMode, setTasks }) => {
     e.preventDefault();
     setTasks((prevTasks) => {
       return [
-        ...prevTasks,
         {
           text: text,
           id: nanoid(),
           completed: false,
         },
+        ...prevTasks,
       ];
     });
     setText("");
